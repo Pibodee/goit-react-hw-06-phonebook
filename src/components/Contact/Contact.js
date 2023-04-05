@@ -1,8 +1,7 @@
 import PropTypes from 'prop-types';
 import { Delete, Item, Text } from './Contact.styled';
 
-
-export const Contact = ({ name, number, onDelete, delId}) => {
+export const Contact = ({ name, number, onDelete, delId }) => {
   return (
     <Item>
       <Text>{name}</Text>

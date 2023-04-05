@@ -11,13 +11,13 @@ export const ContactList = () => {
 
   const filterContacts = () => {
     return contacts.filter(({ name }) => {
-      return name.toLowerCase().includes(filter.toLowerCase())
-    })
-  }
+      return name.toLowerCase().includes(filter.toLowerCase());
+    });
+  };
 
-  const onDeleteContact = id => {dispatch(deleteContact(id))
-    
-  }
+  const onDeleteContact = id => {
+    dispatch(deleteContact(id));
+  };
 
   return (
     <ListStyled>
@@ -35,4 +35,3 @@ export const ContactList = () => {
     </ListStyled>
   );
 };
-

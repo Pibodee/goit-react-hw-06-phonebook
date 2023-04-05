@@ -36,17 +36,16 @@ export const ContactForm = () => {
   const contacts = useSelector(getContacts);
   const dispatch = useDispatch();
 
-
-  const handleSubmit = (values, {resetForm}) => {
+  const handleSubmit = (values, { resetForm }) => {
     const checkedContact = contacts.find(
       contact => contact.name.toLowerCase() === values.name.toLowerCase()
     );
 
     if (checkedContact) {
-      alert(`${values.name} is alredy added`)
-      return
+      alert(`${values.name} is alredy added`);
+      return;
     }
-    dispatch(addContact(values))
+    dispatch(addContact(values));
     resetForm({
       name: '',
       number: '',

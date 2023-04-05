@@ -5,8 +5,8 @@ export const Filter = () => {
   const dispatch = useDispatch();
 
   const onFilter = ({ target: { value } }) => {
-    dispatch(setFilter(value))
-  }
+    dispatch(setFilter(value));
+  };
 
   return (
     <label>
@@ -15,5 +15,3 @@ export const Filter = () => {
     </label>
   );
 };
-
-
