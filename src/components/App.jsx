@@ -18,7 +18,6 @@ export const App = () => {
       { id: 'id-4', name: 'Annie Copeland', number: '227-91-26' },
     ];
   });
-  const [filter, setFilter] = useState('');
 
   useEffect(() => {
     localStorage.setItem('contacts', JSON.stringify(contacts));
@@ -45,15 +44,6 @@ export const App = () => {
     }
   };
 
-  const onFiletr = ({ target: { value } }) => {
-    setFilter(value);
-  };
-
-  const filterContacts = () => {
-    return contacts.filter(({ name }) => {
-      return name.toLowerCase().includes(filter.toLowerCase());
-    });
-  };
 
   const onDelete = evtId => {
     setContacts(prevState => prevState.filter(({ id }) => id !== evtId));
@@ -64,8 +54,8 @@ export const App = () => {
       <h1>Phonebook</h1>
       <ContactForm onFormSubmit={addContact} />
       <h2>Contacts</h2>
-      <Filter onInput={onFiletr} />
-      <ContactList filtered={filterContacts()} onDelete={onDelete} />
+      <Filter />
+      <ContactList onDelete={onDelete} />
     </>
   );
 };
